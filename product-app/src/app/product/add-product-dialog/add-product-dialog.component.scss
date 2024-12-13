@@ -1,0 +1,37 @@
+/* Styles for the Add Product Dialog */
+
+
+::ng-deep .mat-mdc-dialog-surface{
+    padding: 1rem;
+}
+
+
+/* Ensure the form fields take up the full width */
+mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+ 
+  /* Style the dialog content */
+  .mat-dialog-content {
+    overflow: hidden; /* Prevents scrollbars in some cases */
+  }
+ 
+  /* Style the dialog actions */
+  .mat-dialog-actions {
+    justify-content: flex-end;
+    padding: 8px 0;
+  }
+ 
+  /* Adjust the spacing of buttons */
+  .mat-dialog-actions button {
+    margin-left: 8px;
+  }
+ 
+  /* Optional: Style the dialog title */
+  .mat-dialog-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+ 

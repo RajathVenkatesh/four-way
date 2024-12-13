@@ -1,0 +1,50 @@
+.product-container {
+
+
+    padding: 1rem 2rem;
+
+
+    .d-flex {
+        display: flex;
+        align-items: center;
+
+
+        .add-product {
+            margin-left: auto;
+        }
+    }
+
+
+    .product-table-container {
+        margin-top: 1.5rem;
+    }
+
+
+    .left-margin{
+        margin-left: 1.5rem;
+    }
+
+
+    table {
+        width: 100%;
+      }
+     
+      .mat-header-cell, .mat-cell {
+        padding: 0.5rem;
+      }
+     
+      .mat-elevation-z8 {
+        box-shadow: 0rem 0.3125rem 0.3125rem -0.3125rem rgba(0,0,0,0.2),
+                    0rem 0.5rem 0.625rem 0.0625rem rgba(0,0,0,0.14),
+                    0rem 0.3125rem 0.875rem 0.125rem rgba(0,0,0,0.12);
+      }
+     
+}
+
+
+
+
+
+
+
+
