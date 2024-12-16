@@ -82,6 +82,7 @@ export class ProductComponent {
           };
           this.productPouchdbService.addOrUpdateProduct(added);
           if (!this.dataSource.find(p => p.productId === result.productId)) {
+            result.productId = added.productId;
             this.dataSource = [...this.dataSource, result];
         }
         }
