@@ -82,7 +82,6 @@ export class ProductComponent {
           };
           this.productPouchdbService.addOrUpdateProduct(added);
           if (!this.dataSource.find(p => p.productId === result.productId)) {
-            result.productId = crypto.randomUUID();
             this.dataSource = [...this.dataSource, result];
         }
         }
