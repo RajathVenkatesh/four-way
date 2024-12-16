@@ -73,24 +73,24 @@ export class ProductComponent {
     });
 
 
-    dialogRef.afterClosed().subscribe((result: Product | undefined) => {
+    dialogRef.afterClosed().subscribe(async (result: Product | undefined) => {
       if (result) {
         if (!navigator.onLine) {
           const added = {
               ...result,
               isAdded: true
           };
-          this.productPouchdbService.addOrUpdateProduct(added);
+          const addedProduct = await this.productPouchdbService.addOrUpdateProduct(added);
+          result.productId = addedProduct.productId;
           if (!this.dataSource.find(p => p.productId === result.productId)) {
-            result.productId = added.productId;
             this.dataSource = [...this.dataSource, result];
-        }
+          }
         }
         else {
           this.addInProgress = true;
           this.productService.addProduct(result).subscribe({ next : response => {
             if (!this.dataSource.find(p => p.productId === response.productId)) {
-                this.productPouchdbService.addOrUpdateProduct(response);
+                this.productPouchdbService.addProducts(response);
                 this.dataSource = [...this.dataSource, response];
             }
             this.addInProgress = false;

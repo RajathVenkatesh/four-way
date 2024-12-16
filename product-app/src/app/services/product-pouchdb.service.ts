@@ -30,7 +30,8 @@ export class ProductPouchdbService {
           _rev: updatedProduct._rev,
           isUpdated: product.isUpdated
         };
-        return this.db.put(updatedProduct);
+        this.db.put(updatedProduct);
+        return updatedProduct;
       }
       else {
         product.productId = crypto.randomUUID();
@@ -38,7 +39,8 @@ export class ProductPouchdbService {
           ...product,
           _id: product.productId
         };
-        return this.db.put(product);
+        this.db.put(product);
+        return product;
       }
     }
   }
