@@ -250,7 +250,7 @@ export class ProductComponent {
 
   private startConnection(): void {
     this.hubConnection = new signalR.HubConnectionBuilder()
-      .withUrl('https://localhost:7047/notifications/product')
+      .withUrl('http://localhost:7047/notifications/product')
       .withAutomaticReconnect()
       .build();
 
